@@ -1,0 +1,1 @@
+execute as @a[scores={chestClick=1..}] at @s positioned ~ ~1.5 ~ run function risk_of_rain:chest_opening/open_chest
