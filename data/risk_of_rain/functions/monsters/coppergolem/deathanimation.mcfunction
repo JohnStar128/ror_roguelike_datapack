@@ -1,7 +1,9 @@
+#> Add dead monster tag, remove other movement tags
 tag @e[tag=CopperGolem,scores={MonsterHP=-10000..0}] add DeadMonster
 tag @e[tag=CopperGolem,scores={MonsterHP=-10000..0}] remove WalkMonster
 tag @e[tag=CopperGolem,scores={MonsterHP=-10000..0}] add AttackMonster
 
+#> Reset walk animation score to prevent potential bug.
 scoreboard players set @e[tag=CopperGolem,tag=DeadMonster] WalkAnim 0
 
 
@@ -14,9 +16,11 @@ execute as @e[tag=CopperGolem,tag=!CopperGolemHeart,scores={DeathAnim=6}] at @s 
 
 execute as @e[tag=CopperGolemHeart,tag=DeadMonster,scores={DeathAnim=..24}] at @s run tp @s ~ ~-0.2 ~
 
+#> Gets rid of the visible body after 25 seconds
 execute as @e[tag=CopperGolem,tag=CopperGolemHeart,tag=DeadMonster,scores={DeathAnim=1..}] at @s run kill @s
 execute as @e[tag=CopperGolem,tag=DeadMonster,scores={DeathAnim=3000..}] at @s run kill @s
 
+#> Changes the pose of the armorstand body parts, pretty much does the actual animation work.
 execute as @e[tag=CopperGolemBody,tag=DeadMonster,scores={DeathAnim=..96}] store result entity @s Pose.Head[0] float 1 run scoreboard players get @s DeathAnim
 execute as @e[tag=CopperGolemRArm,tag=DeadMonster,scores={DeathAnim=..96}] store result entity @s Pose.Head[0] float 1 run scoreboard players get @s DeathAnim
 execute as @e[tag=CopperGolemLArm,tag=DeadMonster,scores={DeathAnim=..96}] store result entity @s Pose.Head[0] float 1 run scoreboard players get @s DeathAnim

@@ -1,3 +1,5 @@
+##This matches a body part armorstand to it's heart-entity with the same UUID.
+
 #> Check UUID
 scoreboard players operation #current MonsterUUID = @s MonsterUUID
 

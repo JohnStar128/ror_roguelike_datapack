@@ -1,3 +1,5 @@
+
+#> Uses UUIDRNG to grab a random number between 0 and 2147483647 for monsters.
 execute as @s at @s run summon area_effect_cloud ~ ~ ~ {Tags:["MonsterUUID","CopperGolemUUID"],Duration:20}
 
 scoreboard players set @e[tag=CopperGolemUUID] RNGmax 2147483647
