@@ -19,3 +19,6 @@ scoreboard players set @a chestClick 0
 execute as @e[tag=Chest] at @s if block ~ ~ ~ air run kill @s
 # Actionbar title displaying money
 execute as @a at @s if score $gameActive difTracker matches 1.. run title @a actionbar {"text":"100/100 ","color":"green","bold":"true","extra":[{"text":"$","color":"yellow"},{"score":{"objective":"moneyTracker","name":"@s"},"color":"gold","bold":"true"},{"text":" [","color":"gray"},{"text":"☻","color":"red","italic":"true","bold":"false"},{"text":"]","color":"gray"}]}
+
+# Monster loop
+function risk_of_rain:monsters/loop
