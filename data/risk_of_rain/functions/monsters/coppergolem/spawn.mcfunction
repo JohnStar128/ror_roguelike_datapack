@@ -1,4 +1,4 @@
-summon wandering_trader ~ ~ ~ {Tags:["CopperGolem","CopperGolemHeart","NewCopperGolem"],Silent:1b,Invulnerable:1b,ActiveEffects:[{Id:11,Amplifier:0,Duration:999999,ShowParticles:0b},{Id:12,Amplifier:0,Duration:999999,ShowParticles:0b},{Id:14,Amplifier:0,Duration:999999,ShowParticles:0b}]}
+summon wandering_trader ~ ~ ~ {Tags:["CopperGolem","CopperGolemHeart","NewCopperGolem","MonsterHeart"],Silent:1b,Invulnerable:1b,ActiveEffects:[{Id:11,Amplifier:0,Duration:999999,ShowParticles:0b},{Id:12,Amplifier:0,Duration:999999,ShowParticles:0b},{Id:14,Amplifier:0,Duration:999999,ShowParticles:0b}]}
 scoreboard players set @e[tag=NewCopperGolem,tag=CopperGolemHeart] MonsterHP 100
 summon armor_stand ~ ~ ~ {Tags:["CopperGolem","CopperGolemBody","NewCopperGolem"],Invisible:1b,Marker:1b,NoGravity:1b,Invulnerable:1b,Pose:{Head:[0f,0.1f,0f]}}
 summon armor_stand ~ ~ ~ {Tags:["CopperGolem","CopperGolemRArm","NewCopperGolem"],Invisible:1b,Marker:1b,NoGravity:1b,Invulnerable:1b,Pose:{Head:[0f,0.1f,0f]}}
