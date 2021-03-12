@@ -7,12 +7,10 @@ scoreboard players reset @e[tag=CopperGolem,tag=AttackMonster] WalkAnim
 scoreboard players set @e[tag=CopperGolem,tag=DeadMonster] AttackAnim 0
 
 
-scoreboard players add @e[tag=CopperGolem,tag=AttackMonster] AttackAnim 2
-scoreboard players add @e[tag=CopperGolem,tag=AttackMonster,scores={AttackAnim=30..}] AttackAnim 2
+scoreboard players add @e[tag=CopperGolem,tag=AttackMonster,tag=!DeadMonster] AttackAnim 2
+scoreboard players add @e[tag=CopperGolem,tag=AttackMonster,scores={AttackAnim=30..},tag=!DeadMonster] AttackAnim 2
 
-execute as @e[tag=CopperGolemHeart,tag=AttackMonster,scores={AttackAnim=30..}] run data merge entity @s {NoAI:1b,NoGravity:1b}
-
-execute as @e[tag=CopperGolem,tag=!CopperGolemHeart,scores={AttackAnim=3..}] at @s run data merge entity @s {Pose:{Head:[0f,0.1f,0f]}}
+execute as @e[tag=CopperGolemHeart,tag=AttackMonster,scores={AttackAnim=30..},tag=!DeadMonster] run data merge entity @s {NoAI:1b,NoGravity:1b}
 
 #> Changes the pose of the armorstand body parts, pretty much does the actual animation work.
 execute as @e[tag=CopperGolemBody,scores={AttackAnim=1..30}] store result entity @s Pose.Head[0] float -1 run scoreboard players get @s AttackAnim
@@ -35,6 +33,7 @@ execute as @e[tag=CopperGolemLArm,scores={AttackAnim=36..66}] store result entit
 
 ##execute as @e[tag=CopperGolemBody,scores={AttackAnim=60}] at @s run PLAYER DAMAGE RELATED FUNCTION OR COMMAND HERE
 
+execute as @e[tag=CopperGolem,tag=!CopperGolemHeart,scores={AttackAnim=66..}] at @s run data merge entity @s {Pose:{Head:[0f,0.1f,0f]}}
 tag @e[tag=CopperGolem,tag=AttackMonster,scores={AttackAnim=70..}] remove AttackMonster
 execute as @e[tag=CopperGolem,scores={AttackAnim=70..}] run data merge entity @s {NoAI:0b,NoGravity:0b}
 scoreboard players reset @e[tag=CopperGolem,scores={AttackAnim=70..}] AttackAnim

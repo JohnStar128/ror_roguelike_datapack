@@ -5,6 +5,7 @@ tag @e[tag=CopperGolem,scores={MonsterHP=-10000..0}] add AttackMonster
 
 #> Reset walk animation score to prevent potential bug.
 scoreboard players set @e[tag=CopperGolem,tag=DeadMonster] WalkAnim 0
+scoreboard players set @e[tag=CopperGolem,tag=DeadMonster] AttackAnim 0
 
 
 scoreboard players add @e[tag=CopperGolem,tag=DeadMonster] DeathAnim 6
