@@ -22,3 +22,6 @@ execute as @a at @s if score $gameActive difTracker matches 1.. run title @a act
 
 # Monster loop
 function risk_of_rain:monsters/loop
+
+# Harvester loop
+function risk_of_rain:classes/harvester/seed_snare
