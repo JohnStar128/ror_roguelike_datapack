@@ -4,7 +4,9 @@
 ### Functions
 Everything that needs to run constantly goes in `namespace:everytick/everytick.mcfunction`.
 
-Every component of the game (chests, enemies, team stuff, etc) goes in it's own `/path/to/file.mcfunction`
+Everything that should be initialized on first load/reload should go in `init.mcfunction`. 
+
+Every component of the game (chests, enemies, team stuff, etc) goes in it's own `/path/to/file.mcfunction`.\
 Example:
 ```
 risk_of_rain:chest_opening/chest_check
@@ -16,7 +18,7 @@ risk_of_rain:new_thing/new_function
 
 ### Tags
 
-Interactables like chests and shops use block tags to decide if they're in a valid spawning position. To add a valid spawning block, add your block to `risk_of_rain/tags/blocks/map_blocks.json`. If there's a collection of like-blocks, you can put them in their own tag and add that block tag to map_blocks. These custom made block tags should go in the `minecraft` namespace. 
+Interactables like chests and shops use block tags to decide if they're in a valid spawning position. To add a valid spawning block, add your block to `risk_of_rain/tags/blocks/map_blocks.json`. If there's a collection of like-blocks, you can put them in their own tag and add that block tag to map_blocks. These custom made block tags should go in the `minecraft` namespace.\
 Example:
 `risk_of_rain:map_blocks.json`:
 ```json
