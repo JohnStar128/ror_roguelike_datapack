@@ -43,6 +43,70 @@ Example:
 
 ---
 
+### Predicates
+
+Predicates are curently used in setting playable areas around maps. These areas are effectively large rectangles chained together to create one large area assuming the shape of the map.\
+When setting these areas, the parent condition should be `minecraft:alternative`, which allows you to chain multiple conditions together.
+Each location should be contained in an `entity_properties` condition.\
+Example:
+`risk_of_rain:maps/map_name.json`:
+```json
+{
+    "condition": "minecraft:alternative",
+    "terms": [
+       {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "location": {
+                    "position": {
+                        "x": {
+                            "max": 98,
+                            "min": -67
+                        },
+                        "y": {
+                            "max": 100,
+                            "min": 0
+                        },
+                        "z": {
+                            "max": 20,
+                            "min": -34
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "location": {
+                    "position": {
+                        "x": {
+                            "max": 79,
+                            "min": -64
+                        },
+                        "y": {
+                            "max": 100,
+                            "min": 0
+                        },
+                        "z": {
+                            "max": -34,
+                            "min": -59
+                        }
+                    }
+                }
+            } 
+        },
+        {
+        // etc
+        }
+    ]
+}
+```
+
+---
+
 ### Dimensions
 
 Each map will be put into their own dimension. More info TBD
