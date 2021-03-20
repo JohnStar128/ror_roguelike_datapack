@@ -20,6 +20,14 @@ execute as @e[tag=Chest] at @s if block ~ ~ ~ air run kill @s
 # Actionbar title displaying money
 execute as @a at @s if score $gameActive difTracker matches 1.. run title @a actionbar {"text":"100/100 ","color":"green","bold":"true","extra":[{"text":"$","color":"yellow"},{"score":{"objective":"moneyTracker","name":"@s"},"color":"gold","bold":"true"},{"text":" [","color":"gray"},{"text":"☻","color":"red","italic":"true","bold":"false"},{"text":"]","color":"gray"}]}
 
+# Store every player's X/Y/Z to a scoreboard, used in voidout detection
+execute as @a at @s store result score @a posX run data get entity @s Pos[0]
+execute as @a at @s store result score @a posY run data get entity @s Pos[1]
+execute as @a at @s store result score @a posZ run data get entity @s Pos[2]
+
+# Voidout
+function risk_of_rain:void_out/detect
+
 # Monster loop
 function risk_of_rain:monsters/loop
 
