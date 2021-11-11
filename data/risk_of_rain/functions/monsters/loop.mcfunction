@@ -1,5 +1,5 @@
 #> Clear handslot from wandering traders to prevent them from drinking milk
-execute as @e[type=wandering_trader] run replaceitem entity @s weapon.mainhand air
+execute as @e[type=wandering_trader] run item replace entity @s weapon.mainhand with air
 
 
 

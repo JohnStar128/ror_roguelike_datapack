@@ -9,11 +9,11 @@ summon armor_stand ~ ~ ~ {Tags:["CopperGolem","CopperGolemLArm","NewCopperGolem"
 summon armor_stand ~ ~ ~ {Tags:["CopperGolem","CopperGolemRLeg","NewCopperGolem"],Invisible:1b,Marker:1b,NoGravity:1b,Invulnerable:1b,Pose:{Head:[0f,0.1f,0f]}}
 summon armor_stand ~ ~ ~ {Tags:["CopperGolem","CopperGolemLLeg","NewCopperGolem"],Invisible:1b,Marker:1b,NoGravity:1b,Invulnerable:1b,Pose:{Head:[0f,0.1f,0f]}}
 
-execute as @e[tag=CopperGolemBody,tag=NewCopperGolem] run replaceitem entity @s armor.head diamond_hoe{CustomModelData:3}
-execute as @e[tag=CopperGolemRArm,tag=NewCopperGolem] run replaceitem entity @s armor.head diamond_hoe{CustomModelData:4}
-execute as @e[tag=CopperGolemLArm,tag=NewCopperGolem] run replaceitem entity @s armor.head diamond_hoe{CustomModelData:5}
-execute as @e[tag=CopperGolemRLeg,tag=NewCopperGolem] run replaceitem entity @s armor.head diamond_hoe{CustomModelData:6}
-execute as @e[tag=CopperGolemLLeg,tag=NewCopperGolem] run replaceitem entity @s armor.head diamond_hoe{CustomModelData:7}
+execute as @e[tag=CopperGolemBody,tag=NewCopperGolem] run item replace entity @s armor.head with diamond_hoe{CustomModelData:3}
+execute as @e[tag=CopperGolemRArm,tag=NewCopperGolem] run item replace entity @s armor.head with diamond_hoe{CustomModelData:4}
+execute as @e[tag=CopperGolemLArm,tag=NewCopperGolem] run item replace entity @s armor.head with diamond_hoe{CustomModelData:5}
+execute as @e[tag=CopperGolemRLeg,tag=NewCopperGolem] run item replace entity @s armor.head with diamond_hoe{CustomModelData:6}
+execute as @e[tag=CopperGolemLLeg,tag=NewCopperGolem] run item replace entity @s armor.head with diamond_hoe{CustomModelData:7}
 
 
 #> Generates a UUID for the new monster.
